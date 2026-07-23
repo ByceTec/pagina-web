@@ -32,6 +32,16 @@
         .tech-grid-bg {
             background-image: radial-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px);
             background-size: 24px 24px;
+
+            /* Cambia el cursor general por defecto a un punto de mira o cruz tecnológica */
+body {
+    cursor: crosshair; /* O puedes usar 'url()', mira la Opción 2 */
+}
+
+/* Cursor especial estilo puntero/mano para botones y enlaces */
+a, button, select, input[type="submit"], input[type="button"] {
+    cursor: pointer;
+}
         }
     </style>
 </head>
