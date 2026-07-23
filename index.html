@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- ========================================== -->
+    <!-- CONFIGURACIÓN BÁSICA Y SEO                 -->
+    <!-- ========================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByceTec | Ingeniería, Infraestructura Tecnológica & Soporte 24/7</title>
     
-    <!-- Meta descripción para SEO y redes sociales -->
-    <meta name="description" content="ByceTec - Soluciones de ingeniería, mantenimiento de cómputo, CCTV, redes Wi-Fi, ciberseguridad, soporte 24/7, venta de equipos y desarrollo web.">
+    <!-- Meta descripción estándar para buscadores como Google -->
+    <meta name="description" content="ByceTec - Soluciones de ingeniería, mantenimiento de cómputo, CCTV, redes Wi-Fi, ciberseguridad, soporte 24/7, venta de equipos y desarrollo web en Bogotá y Cundinamarca.">
 
-    <!-- Tailwind CSS CDN para estilos rápidos y responsivos -->
+    <!-- ========================================== -->
+    <!-- PREVISUALIZACIÓN PARA WHATSAPP Y REDES     -->
+    <!-- (Muestra tarjeta interactiva al enviar link) -->
+    <!-- ========================================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ByceTec | Ingeniería, CCTV & Soporte 24/7">
+    <meta property="og:description" content="Soluciones tecnológicas integrales: Mantenimiento de cómputo, cámaras CCTV, redes Wi-Fi y ciberseguridad. Atendemos emergencias 24/7 en Bogotá y Cundinamarca.">
+    <meta property="og:url" content="https://bycetec.github.io/pagina-web/">
+
+    <!-- ========================================== -->
+    <!-- LIBRERÍAS EXTERNAS (TAILWIND & FONTAWESOME) -->
+    <!-- ========================================== -->
+    <!-- Framework de diseño responsive Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- FontAwesome para la librería de íconos -->
+    <!-- Librería de íconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Estilos personalizados para el fondo técnico de puntos -->
+    <!-- Estilos personalizados para la cuadrícula técnica de fondo -->
     <style>
         .tech-grid-bg {
             background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
@@ -30,7 +45,7 @@
     <nav class="bg-slate-900/90 backdrop-blur border-b border-slate-800 fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
             
-            <!-- Logo con Monograma BT sin recuadro -->
+            <!-- Logo con Monograma BT -->
             <a href="#" class="flex items-center gap-3.5 group">
                 <span class="text-3xl font-black tracking-tighter text-white group-hover:text-blue-400 transition duration-300">
                     B<span class="text-blue-500">T</span>
@@ -46,7 +61,7 @@
                 </div>
             </a>
 
-            <!-- Botón directo de acción -->
+            <!-- Botón de Acción Principal -->
             <a href="#cotizar" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium transition text-sm sm:text-base shadow-lg shadow-blue-600/20">
                 Solicitar Diagnóstico
             </a>
@@ -55,17 +70,17 @@
     </nav>
 
     <!-- ========================================== -->
-    <!-- 2. ENCABEZADO PRINCIPAL (HERO CON GLOW)    -->
+    <!-- 2. SECCIÓN PRINCIPAL DE IMPACTO (HERO)     -->
     <!-- ========================================== -->
     <header class="relative pt-36 pb-20 px-4 text-center max-w-5xl mx-auto overflow-hidden">
         
-        <!-- Resplandor azul ambiental de fondo (Glow) -->
+        <!-- Resplandor ambiental ambiental azul de fondo (Glow Effect) -->
         <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[250px] bg-blue-600/20 rounded-full blur-[100px] pointer-events-none -z-10"></div>
         
-        <!-- Cuadrícula técnica de puntos -->
+        <!-- Cuadrícula de puntos de la matriz técnica -->
         <div class="absolute inset-0 tech-grid-bg pointer-events-none -z-10 opacity-70"></div>
 
-        <!-- Badge de disponibilidad 24/7 con punto animado -->
+        <!-- Indicador de Disponibilidad 24/7 animado -->
         <div class="inline-flex items-center gap-2 text-blue-400 text-xs sm:text-sm font-semibold tracking-wider uppercase bg-blue-950/90 px-4 py-1.5 rounded-full border border-blue-800/80 mb-6 shadow-lg shadow-blue-950/50 backdrop-blur">
             <span class="relative flex h-2.5 w-2.5">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -74,7 +89,7 @@
             Soporte Técnico 24/7 & Emergencias
         </div>
 
-        <!-- Título principal -->
+        <!-- Título principal con degradado -->
         <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white drop-shadow">
             Ingeniería, Infraestructura Tecnológica & <br class="hidden sm:inline"/>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">Soporte Especializado</span>
@@ -85,7 +100,7 @@
             Acompañamos a personas, empresas y copropiedades con soluciones a medida: desde mantenimiento preventivo y emergencias 24/7 hasta proyectos de CCTV, redes, ciberseguridad y ventas.
         </p>
 
-        <!-- Botones de navegación interna -->
+        <!-- Botones de Navegación Rápida -->
         <div class="flex flex-wrap justify-center gap-4 relative z-10 mb-16">
             <a href="#servicios" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition shadow-xl shadow-blue-600/30 hover:scale-105 duration-200">
                 Explorar Servicios
@@ -95,7 +110,7 @@
             </a>
         </div>
 
-        <!-- Barra de métricas y garantías de confianza -->
+        <!-- Indicadores de Confianza y Cobertura -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-slate-800/80 pt-8 text-left sm:text-center">
             <div class="p-3">
                 <span class="block text-2xl font-black text-white">24 / 7</span>
@@ -118,7 +133,7 @@
     </header>
 
     <!-- ========================================== -->
-    <!-- 3. BANNER DESTACADO DE ATENCIÓN RÁPIDA     -->
+    <!-- 3. BANNER DE DIAGNÓSTICO EN SITIO          -->
     <!-- ========================================== -->
     <section class="max-w-7xl mx-auto px-4 mb-16">
         <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-slate-950 border border-blue-800/50 p-8 sm:p-10 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
@@ -134,7 +149,7 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 4. PORTAFOLIO DE SERVICIOS EN REJILLA      -->
+    <!-- 4. CATÁLOGO DE SERVICIOS EN REJILLA        -->
     <!-- ========================================== -->
     <section id="servicios" class="py-16 bg-slate-900/50 border-y border-slate-800/50">
         <div class="max-w-7xl mx-auto px-4">
@@ -145,7 +160,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Servicio 1: Soporte 24/7 -->
+                <!-- Servicio 1: Mantenimiento y Soporte 24/7 -->
                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                     <div class="w-12 h-12 bg-blue-950 border border-blue-800/80 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
                         <i class="fas fa-headset"></i>
@@ -161,7 +176,7 @@
                     </ul>
                 </div>
 
-                <!-- Servicio 2: CCTV -->
+                <!-- Servicio 2: CCTV y Seguridad Electrónica -->
                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                     <div class="w-12 h-12 bg-blue-950 border border-blue-800/80 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
                         <i class="fas fa-video"></i>
@@ -177,7 +192,7 @@
                     </ul>
                 </div>
 
-                <!-- Servicio 3: Redes -->
+                <!-- Servicio 3: Redes Wi-Fi y Cableado -->
                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                     <div class="w-12 h-12 bg-blue-950 border border-blue-800/80 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
                         <i class="fas fa-network-wired"></i>
@@ -193,7 +208,7 @@
                     </ul>
                 </div>
 
-                <!-- Servicio 4: Venta de Equipos -->
+                <!-- Servicio 4: Venta de Equipos y Repuestos -->
                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                     <div class="w-12 h-12 bg-blue-950 border border-blue-800/80 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
                         <i class="fas fa-boxes-stacked"></i>
@@ -209,28 +224,23 @@
                     </ul>
                 </div>
 
-            
+                <!-- Servicio 5: Ciberseguridad y Datos -->
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-blue-950 border border-blue-800/80 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Ciberseguridad & Datos</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Recuperación profesional de información formateada o borrada. Protección perimetral, firewall y políticas de respaldo de datos.
+                    </p>
+                    <ul class="text-slate-400 text-xs space-y-2">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Recuperación de discos y memorias</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Protección contra malware / virus</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Planes de copias de seguridad</li>
+                    </ul>
+                </div>
 
-                 <!-- Servicio 5: Ciberseguridad -->
-                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
-                     <div class="w-12 h-12 bg-blue-950 border border-blue-800/80 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
-                         <i class="fas fa-shield-alt"></i>
-                     </div>
-                     <h3 class="text-xl font-bold mb-3 text-white">Ciberseguridad & Datos</h3>
-                     <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                         Recuperación profesional de información formateada o borrada. Protección perimetral, firewall y políticas de respaldo de datos.
-                     </p>
-                     <ul class="text-slate-400 text-xs space-y-2">
-                         <li><i class="fas fa-check text-blue-500 mr-2"></i>Recuperación de discos y memorias</li>
-                         <li><i class="fas fa-check text-blue-500 mr-2"></i>Protección contra malware / virus</li>
-                         <li><i class="fas fa-check text-blue-500 mr-2"></i>Planes de copias de seguridad</li>
-                     </ul>
-                 </div>
-
-
-                
-
-                <!-- Servicio 6: Web & Bots -->
+                <!-- Servicio 6: Desarrollo Web y Bots -->
                 <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                     <div class="w-12 h-12 bg-blue-950 border border-blue-800/80 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
                         <i class="fas fa-code"></i>
@@ -251,7 +261,7 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 5. FORMULARIO CON AVISO DE VISITA TÉCNICA  -->
+    <!-- 5. FORMULARIO DE COTIZACIÓN CON NOTA       -->
     <!-- ========================================== -->
     <section id="cotizar" class="py-16 max-w-4xl mx-auto px-4">
         <div class="bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
@@ -270,7 +280,7 @@
                 </p>
             </div>
 
-            <!-- Formulario de captura de datos -->
+            <!-- Formulario de captura -->
             <form id="quoteForm" onsubmit="enviarCotizacion(event)" class="space-y-5">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     
@@ -310,7 +320,6 @@
                             <option value="Venta de Equipos o Repuestos">Venta de Equipos / Repuestos</option>
                             <option value="Ciberseguridad y Recuperación">Ciberseguridad / Recuperación de Datos</option>
                             <option value="Desarrollo Web o Automatización">Desarrollo Web / Bots</option>
-                            <option value="Desarrollo Web o Automatización">Otros / Servicios</option>
                         </select>
                     </div>
 
@@ -331,7 +340,7 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 6. SECCIÓN DE CONTACTO SECUNDARIO          -->
+    <!-- 6. LLAMADO DE CONTACTO DIRECTO SECUNDARIO  -->
     <!-- ========================================== -->
     <section id="contacto" class="py-16 max-w-4xl mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold mb-4 text-white">¿Prefieres un contacto directo?</h2>
@@ -352,7 +361,7 @@
     </footer>
 
     <!-- ========================================== -->
-    <!-- 8. BOTÓN FLOTANTE DE WHATSAPP 24/7         -->
+    <!-- 8. BOTÓN FLOTANTE PERMANENTE DE WHATSAPP   -->
     <!-- ========================================== -->
     <a href="https://wa.me/573125898271?text=Hola%20ByceTec,%20necesito%20asistencia%20t%C3%A9cnica%20de%20emergencia" target="_blank" class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl z-50 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-emerald-950/80 group" title="Soporte 24/7">
         <i class="fab fa-whatsapp text-3xl"></i>
@@ -362,30 +371,30 @@
     </a>
 
     <!-- ========================================== -->
-    <!-- 9. SCRIPT JAVASCRIPT DE COTIZACIÓN        -->
+    <!-- 9. LÓGICA DE JAVASCRIPT DE ENVÍO          -->
     <!-- ========================================== -->
     <script>
         /**
          * Función: enviarCotizacion
-         * Captura los datos introducidos por el cliente en el formulario, 
-         * construye un texto formateado agregando la aclaración legal/técnica
-         * y abre la app de WhatsApp con el mensaje estructurado.
+         * Se ejecuta al hacer clic en el botón del formulario.
+         * Extrae los campos, arma el mensaje codificado con la nota legal
+         * y abre la ventana directa de WhatsApp.
          */
         function enviarCotizacion(event) {
-            // Previene el refresco por defecto de la página
+            // Cancela el evento por defecto para evitar la recarga del sitio
             event.preventDefault();
 
-            // 1. Obtención de valores del formulario
+            // 1. Obtener valores ingresados por el cliente
             const nombre = document.getElementById('nombre').value;
             const ubicacion = document.getElementById('ubicacion').value;
             const tipoCliente = document.getElementById('tipoCliente').value;
             const servicio = document.getElementById('servicio').value;
             const detalles = document.getElementById('detalles').value || 'Sin detalles adicionales';
 
-            // 2. Teléfono receptor de ByceTec
+            // 2. Teléfono receptor corporativo de ByceTec
             const telefono = '573125898271';
 
-            // 3. Estructura del mensaje de WhatsApp con aclaración técnica
+            // 3. Formateo de texto en sintaxis WhatsApp (%0A = Salto de línea)
             const mensaje = `*NUEVA SOLICITUD DE COTIZACIÓN - BYCETEC*%0A%0A` +
                             `👤 *Cliente:* ${encodeURIComponent(nombre)}%0A` +
                             `📍 *Ubicación:* ${encodeURIComponent(ubicacion)}%0A` +
@@ -394,7 +403,7 @@
                             `📝 *Detalles:* ${encodeURIComponent(detalles)}%0A%0A` +
                             `📌 *Nota:* Entendido que todo valor estimado queda sujeto a verificación e inspección técnica previa en sitio.`;
 
-            // 4. Redirección e inicio de conversación en WhatsApp
+            // 4. Redirección a WhatsApp en nueva pestaña
             window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
         }
     </script>
