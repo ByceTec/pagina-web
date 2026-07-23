@@ -19,20 +19,15 @@
     <meta property="og:url" content="https://bycetec.github.io/pagina-web/">
 
     <!-- ========================================== -->
-    <!-- 3. OPTIMIZACIÓN DE VELOCIDAD (PAGESPEED)   -->
+    <!-- 3. CARGA DE MOTOR TAILWIND V3 Y FUENTES    -->
     <!-- ========================================== -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome cargado sin bloquear renderizado -->
+
+    <!-- FontAwesome Asíncrono para no bloquear carga -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
-    <!-- Estilos de contraste y cuadrícula técnica -->
+    <!-- Estilos personalizados -->
     <style>
         .tech-grid-bg {
             background-image: radial-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px);
@@ -72,7 +67,7 @@
         </div>
     </nav>
 
-    <!-- PUNTOS DE REFERENCIA SEMÁNTICOS MAIN -->
+    <!-- ESTRUCTURA PRINCIPAL SEMÁNTICA -->
     <main>
 
         <!-- ========================================== -->
@@ -277,7 +272,6 @@
                     </p>
                 </div>
 
-                <!-- Formulario con LABELS y FOR vinculados -->
                 <form id="quoteForm" onsubmit="enviarCotizacion(event)" class="space-y-5">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         
