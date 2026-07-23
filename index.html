@@ -44,10 +44,11 @@
         <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
             
             <!-- Logo principal con Monograma BT -->
-            <a href="#" class="flex items-center gap-3.5 group" aria-label="Página de inicio ByceTec">
+            <a href="index.html" class="flex items-center gap-3.5 group" aria-label="Página de inicio ByceTec">
                 <span class="text-3xl font-black tracking-tighter text-white group-hover:text-blue-400 transition duration-300">
                     B<span class="text-blue-500">T</span>
                 </span>
+                
                 <div class="h-7 w-[1px] bg-slate-700"></div>
                 <div class="flex flex-col">
                     <span class="text-lg font-extrabold tracking-wider text-white flex items-center gap-1">
@@ -58,14 +59,30 @@
                     </span>
                 </div>
             </a>
-           <!-- QUIENES SOMOS  -->
-            <a href="quienes-somos.html" class="text-slate-300 hover:text-white text-sm font-medium transition">Quiénes Somos</a>
-            
-            <!-- Botón de Acción Directa -->
-            <a href="#cotizar" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium transition text-sm sm:text-base shadow-lg shadow-blue-600/20">
+
+            <!-- ENLACES EN COMPUTADORA -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="index.html" class="text-blue-400 text-sm font-semibold transition">Inicio</a>
+                <a href="quienes-somos.html" class="text-slate-300 hover:text-white text-sm font-medium transition">Quiénes Somos</a>
+                <a href="#cotizar" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium transition text-sm shadow-lg shadow-blue-600/20">
+                    Solicitar Diagnóstico
+                </a>
+            </div>
+
+            <!-- BOTÓN MENÚ MÓVIL (LÍNEAS) -->
+            <button id="menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 text-xl" aria-label="Abrir menú de navegación">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+
+        <!-- MENÚ DESPLEGABLE MÓVIL -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block text-blue-400 text-base font-semibold py-2 border-b border-slate-800/60">Inicio</a>
+            <a href="quienes-somos.html" class="block text-slate-300 hover:text-white text-base font-medium py-2 border-b border-slate-800/60">Quiénes Somos</a>
+            <a href="#cotizar" onclick="toggleMobileMenu()" class="block text-center bg-blue-600 hover:bg-blue-500 text-white px-4 py-3 rounded-xl font-medium transition text-sm shadow-lg shadow-blue-600/20 mt-2">
                 Solicitar Diagnóstico
             </a>
-
         </div>
     </nav>
 
@@ -144,7 +161,7 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- 7. PORTAFOLIO DE SERVICIOS EN REJILLA      -->
+        <!-- 7. PORTAFOLIO DE SERVICIOS en rejilla     -->
         <!-- ========================================== -->
         <section id="servicios" class="py-16 bg-slate-900/50 border-y border-slate-800">
             <div class="max-w-7xl mx-auto px-4">
@@ -256,7 +273,7 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- 8. FORMULARIO MULTICANAL DE COTIZACIÓN    -->
+        <!-- 8. FORMULARIO MULTICANAL DE COTIZACIÓN     -->
         <!-- ========================================== -->
         <section id="cotizar" class="py-16 max-w-4xl mx-auto px-4">
             <div class="bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
@@ -378,9 +395,15 @@
     </a>
 
     <!-- ========================================== -->
-    <!-- 12. LÓGICA DE JAVASCRIPT DINÁMICA          -->
+    <!-- 12. LÓGICA DE JAVASCRIPT DINÁMICA           -->
     <!-- ========================================== -->
     <script>
+        // Función para abrir/cerrar el menú en celulares
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
         function cambiarMedioContacto() {
             const medio = document.getElementById('medioContacto').value;
             const label = document.getElementById('labelDatoContacto');
