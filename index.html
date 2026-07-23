@@ -40,9 +40,8 @@
             cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ef4444'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%2338bdf8' stroke-width='1.5' stroke-dasharray='2 2'/%3E%3Cline x1='16' y1='2' x2='16' y2='10' stroke='%2338bdf8' stroke-width='1.5'/%3E%3Cline x1='16' y1='22' x2='16' y2='30' stroke='%2338bdf8' stroke-width='1.5'/%3E%3Cline x1='2' y1='16' x2='10' y2='16' stroke='%2338bdf8' stroke-width='1.5'/%3E%3Cline x1='22' y1='16' x2='30' y2='16' stroke='%2338bdf8' stroke-width='1.5'/%3E%3C/svg%3E") 16 16, auto;
         }
         
-        /* --- CAMBIO DE CURSOR AL PASAR POR EL MENÚ (Inicio / Quiénes Somos) --- */
-        /* Al pasar el mouse sobre los enlaces principales del menú superior, cambia a una mira de puntería táctica con punto verde brillante */
-        nav .hidden.md\\:flex a:not([href*='#cotizar']), 
+        /* --- CAMBIO DE CURSOR AL PASAR POR EL MENÚ --- */
+        nav .hidden.md\:flex a:not([href*='#cotizar']), 
         nav #mobile-menu a:not([onclick]) {
             cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='5' fill='%2322c55e'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%2322c55e' stroke-width='2'/%3E%3C/svg%3E") 16 16, pointer;
         }
@@ -82,6 +81,7 @@
             <div class="hidden md:flex items-center gap-6">
                 <a href="index.html" class="text-blue-400 text-sm font-semibold transition hover:text-cyan-300">Inicio</a>
                 <a href="quienes-somos.html" class="text-slate-300 hover:text-white text-sm font-medium transition hover:text-cyan-300">Quiénes Somos</a>
+                <a href="#trabaja-con-nosotros" class="text-slate-300 hover:text-white text-sm font-medium transition hover:text-cyan-300">Trabaja con nosotros</a>
                 <a href="#cotizar" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium transition text-sm shadow-lg shadow-blue-600/20">
                     Solicitar Diagnóstico
                 </a>
@@ -98,6 +98,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
             <a href="index.html" class="block text-blue-400 text-base font-semibold py-2 border-b border-slate-800/60">Inicio</a>
             <a href="quienes-somos.html" class="block text-slate-300 hover:text-white text-base font-medium py-2 border-b border-slate-800/60">Quiénes Somos</a>
+            <a href="#trabaja-con-nosotros" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white text-base font-medium py-2 border-b border-slate-800/60">Trabaja con nosotros</a>
             <a href="#cotizar" onclick="toggleMobileMenu()" class="block text-center bg-blue-600 hover:bg-blue-500 text-white px-4 py-3 rounded-xl font-medium transition text-sm shadow-lg shadow-blue-600/20 mt-2">
                 Solicitar Diagnóstico
             </a>
@@ -291,6 +292,64 @@
         </section>
 
         <!-- ========================================== -->
+        <!-- 7.5. SECCIÓN TRABAJA CON NOSOTROS          -->
+        <!-- ========================================== -->
+        <section id="trabaja-con-nosotros" class="py-16 max-w-4xl mx-auto px-4">
+            <div class="bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-24 -left-24 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="text-center mb-8">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-950 px-3.5 py-1.5 rounded-full border border-emerald-700 mb-3 inline-block">Únete al Equipo</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Trabaja con Nosotros</h2>
+                    <p class="text-slate-300 text-sm mt-2">
+                        ¿Eres apasionado por la tecnología, redes, CCTV o soporte técnico? Envíanos tus datos y perfil profesional para futuras convocatorias en Bogotá y Cundinamarca.
+                    </p>
+                </div>
+
+                <form id="workForm" onsubmit="enviarTrabajo(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="nombreTrabajo" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Nombre Completo</label>
+                            <input type="text" id="nombreTrabajo" required placeholder="Ej: Andrés Gómez" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                        </div>
+
+                        <div>
+                            <label for="contactoTrabajo" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Teléfono / WhatsApp</label>
+                            <input type="text" id="contactoTrabajo" required placeholder="Ej: 300 987 6543" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="especialidadTrabajo" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Área de Especialidad</label>
+                            <select id="especialidadTrabajo" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                                <option value="Soporte y Mantenimiento de Cómputo">Soporte y Mantenimiento de Cómputo</option>
+                                <option value="Redes y Cableado Estructurado">Redes y Cableado Estructurado</option>
+                                <option value="Cámaras de Seguridad y CCTV">Cámaras de Seguridad y CCTV</option>
+                                <option value="Desarrollo Web o Software">Desarrollo Web o Software</option>
+                                <option value="Otro / Técnico General">Otro / Técnico General</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="ciudadTrabajo" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Ciudad / Municipio de Residencia</label>
+                            <input type="text" id="ciudadTrabajo" required placeholder="Ej: Soacha / Bogotá" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="experienciaTrabajo" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Breve Resumen de Experiencia / Enlace a Portafolio o CV</label>
+                        <textarea id="experienciaTrabajo" rows="3" placeholder="Cuéntanos brevemente sobre tu experiencia o pega un enlace a tu hoja de vida..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-3 hover:scale-[1.01] duration-200">
+                        <i class="fas fa-briefcase text-lg" aria-hidden="true"></i> Enviar Postulación
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
         <!-- 8. FORMULARIO MULTICANAL DE COTIZACIÓN     -->
         <!-- ========================================== -->
         <section id="cotizar" class="py-16 max-w-4xl mx-auto px-4">
@@ -464,6 +523,27 @@
                             `📞 / 📧 *Dato Contacto:* ${encodeURIComponent(datoContacto)}%0A` +
                             `📝 *Detalles:* ${encodeURIComponent(detalles)}%0A%0A` +
                             `📌 *Nota:* Entendido que todo valor estimado queda sujeto a verificación e inspección técnica previa en sitio.`;
+
+            window.open(`https://wa.me/${telefonoCentral}?text=${mensaje}`, '_blank');
+        }
+
+        function enviarTrabajo(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombreTrabajo').value;
+            const contacto = document.getElementById('contactoTrabajo').value;
+            const especialidad = document.getElementById('especialidadTrabajo').value;
+            const ciudad = document.getElementById('ciudadTrabajo').value;
+            const experiencia = document.getElementById('experienciaTrabajo').value || 'Sin detalles adicionales';
+
+            const telefonoCentral = '573125898271';
+
+            const mensaje = `*NUEVA POSTULACIÓN - TRABAJA CON NOSOTROS (BYCETEC*%0A%0A` +
+                            `👤 *Aspirante:* ${encodeURIComponent(nombre)}%0A` +
+                            `📱 *Contacto:* ${encodeURIComponent(contacto)}%0A` +
+                            `🛠️ *Especialidad:* ${encodeURIComponent(especialidad)}%0A` +
+                            `📍 *Ciudad:* ${encodeURIComponent(ciudad)}%0A` +
+                            `📝 *Experiencia:* ${encodeURIComponent(experiencia)}`;
 
             window.open(`https://wa.me/${telefonoCentral}?text=${mensaje}`, '_blank');
         }
