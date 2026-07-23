@@ -74,7 +74,7 @@
             Soporte Técnico 24/7 & Emergencias
         </div>
 
-        <!-- Título principal con gradiente de texto -->
+        <!-- Título principal -->
         <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white drop-shadow">
             Ingeniería, Infraestructura Tecnológica & <br class="hidden sm:inline"/>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">Soporte Especializado</span>
@@ -246,7 +246,7 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 5. FORMULARIO DE COTIZACIÓN RÁPIDA         -->
+    <!-- 5. FORMULARIO CON AVISO DE VISITA TÉCNICA  -->
     <!-- ========================================== -->
     <section id="cotizar" class="py-16 max-w-4xl mx-auto px-4">
         <div class="bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
@@ -257,7 +257,12 @@
             <div class="text-center mb-8">
                 <span class="text-blue-400 text-xs font-bold uppercase tracking-widest bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-800/80 mb-3 inline-block">Cotización Inmediata</span>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Solicita tu Presupuesto o Diagnóstico</h2>
-                <p class="text-slate-400 text-sm mt-2">Dinos qué necesitas y te responderemos de inmediato con la viabilidad técnica.</p>
+                <p class="text-slate-400 text-sm mt-2">
+                    Dinos qué necesitas para darte una orientación o estimación inicial. <br class="hidden sm:inline"/>
+                    <span class="text-slate-300 font-medium bg-slate-950/80 px-3 py-1 rounded-lg border border-slate-800 mt-2 inline-block text-xs text-blue-400">
+                        📌 Nota: Todo valor final o presupuesto definitivo queda sujeto a la inspección previa en sitio.
+                    </span>
+                </p>
             </div>
 
             <!-- Formulario de captura de datos -->
@@ -354,29 +359,36 @@
     <!-- 9. SCRIPT JAVASCRIPT DE COTIZACIÓN        -->
     <!-- ========================================== -->
     <script>
+        /**
+         * Función: enviarCotizacion
+         * Captura los datos introducidos por el cliente en el formulario, 
+         * construye un texto formateado agregando la aclaración legal/técnica
+         * y abre la app de WhatsApp con el mensaje estructurado.
+         */
         function enviarCotizacion(event) {
-            // Evitar que la página se recargue al presionar enviar
+            // Previene el refresco por defecto de la página
             event.preventDefault();
 
-            // Capturar los valores ingresados por el usuario
+            // 1. Obtención de valores del formulario
             const nombre = document.getElementById('nombre').value;
             const ubicacion = document.getElementById('ubicacion').value;
             const tipoCliente = document.getElementById('tipoCliente').value;
             const servicio = document.getElementById('servicio').value;
             const detalles = document.getElementById('detalles').value || 'Sin detalles adicionales';
 
-            // Tu número telefónico institucional de WhatsApp
+            // 2. Teléfono receptor de ByceTec
             const telefono = '573125898271';
 
-            // Estructurar el mensaje de texto con saltos de línea (%0A) y negritas (*)
+            // 3. Estructura del mensaje de WhatsApp con aclaración técnica
             const mensaje = `*NUEVA SOLICITUD DE COTIZACIÓN - BYCETEC*%0A%0A` +
                             `👤 *Cliente:* ${encodeURIComponent(nombre)}%0A` +
                             `📍 *Ubicación:* ${encodeURIComponent(ubicacion)}%0A` +
                             `🏢 *Tipo:* ${encodeURIComponent(tipoCliente)}%0A` +
                             `🛠️ *Servicio:* ${encodeURIComponent(servicio)}%0A` +
-                            `📝 *Detalles:* ${encodeURIComponent(detalles)}`;
+                            `📝 *Detalles:* ${encodeURIComponent(detalles)}%0A%0A` +
+                            `📌 *Nota:* Entendido que todo valor estimado queda sujeto a verificación e inspección técnica previa en sitio.`;
 
-            // Abrir el enlace directo de WhatsApp en una pestaña nueva
+            // 4. Redirección e inicio de conversación en WhatsApp
             window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
         }
     </script>
