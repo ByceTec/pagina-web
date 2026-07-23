@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con ByceTec - Red de Especialistas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans">
+
+    <!-- ========================================== -->
+    <!-- NAVEGACIÓN RÁPIDA (Opcional para la vista) -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-extrabold text-white">Byce<span class="text-blue-500">Tec</span></a>
+            <nav class="flex items-center gap-6">
+                <a href="index.html" class="text-slate-300 hover:text-white text-sm font-medium transition">Volver al Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========================================== -->
+        <!-- SECCIÓN: TRABAJA CON NOSOTROS / ALIANZAS   -->
+        <!-- ========================================== -->
+        <section id="trabaja-con-nosotros" class="py-16 bg-slate-900/40 border-t border-slate-800 min-h-[calc(100vh-73px)] flex items-center">
+            <div class="max-w-4xl mx-auto px-4 w-full">
+                <div class="text-center mb-12">
+                    <span class="text-blue-300 text-xs font-bold uppercase tracking-widest bg-blue-950 px-3.5 py-1.5 rounded-full border border-blue-700 mb-3 inline-block">Red de Especialistas</span>
+                    <h2 class="text-3xl font-extrabold text-white">Trabaja con ByceTec</h2>
+                    <p class="text-slate-300 text-sm mt-3 max-w-2xl mx-auto">
+                        ¿Eres técnico especialista en infraestructura, redes, CCTV o soporte de cómputo? Súmate a nuestra red de aliados para proyectos y servicios a domicilio en Bogotá y Cundinamarca.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                    <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <form id="formTrabajo" onsubmit="enviarPostulacion(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="nombreCandidato" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Nombre Completo</label>
+                                <input type="text" id="nombreCandidato" required placeholder="Ej: Andrés Martínez" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                            </div>
+
+                            <div>
+                                <label for="zonaResidencia" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Zona / Localidad de Residencia</label>
+                                <input type="text" id="zonaResidencia" required placeholder="Ej: Bogotá (Engativá) / Soacha" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="especialidadPrincipal" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Especialidad Principal</label>
+                                <select id="especialidadPrincipal" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                                    <option value="CCTV y Seguridad Electrónica">CCTV y Cámaras de Seguridad</option>
+                                    <option value="Redes Wi-Fi y Cableado Estructurado">Redes Wi-Fi y Cableado Estructurado</option>
+                                    <option value="Soporte y Mantenimiento de Cómputo">Soporte y Mantenimiento de Cómputo</option>
+                                    <option value="Microelectrónica / Reparación a Nivel Componente">Microelectrónica / Board-level</option>
+                                    <option value="Servidores Linux / Redes Avanzadas">Servidores Linux / Redes Avanzadas</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="experiencia" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Años de Experiencia Comprobable</label>
+                                <select id="experiencia" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                                    <option value="1 a 3 años">1 a 3 años</option>
+                                    <option value="3 a 5 años">3 a 5 años</option>
+                                    <option value="Más de 5 años">Más de 5 años</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2 border-t border-slate-800">
+                            <div>
+                                <label for="telefonoCandidato" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Número de WhatsApp</label>
+                                <input type="tel" id="telefonoCandidato" required placeholder="Ej: 300 987 6543" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                            </div>
+
+                            <div>
+                                <label for="herramientasPropias" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">¿Cuentas con herramientas propias?</label>
+                                <select id="herramientasPropias" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                                    <option value="Sí, herramientas completas y transporte">Sí, herramientas completas y transporte</option>
+                                    <option value="Sí, herramientas básicas">Sí, herramientas básicas</option>
+                                    <option value="No por el momento">No por el momento</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="perfilResumen" class="block text-xs font-semibold text-slate-200 mb-2 uppercase tracking-wider">Breve resumen de tu experiencia o perfil</label>
+                            <textarea id="perfilResumen" rows="3" placeholder="Menciona brevemente tus fortalezas técnicas o proyectos destacados..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-slate-800 hover:bg-blue-600 text-white font-bold py-4 rounded-xl transition shadow-lg flex items-center justify-center gap-3 border border-slate-700 hover:border-blue-500 cursor-pointer">
+                            <i class="fas fa-briefcase text-blue-400 text-lg" aria-hidden="true"></i> Enviar Postulación a ByceTec
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- SCRIPT DE ENVÍO DE POSTULACIÓN             -->
+    <!-- ========================================== -->
+    <script>
+        function enviarPostulacion(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombreCandidato').value;
+            const zona = document.getElementById('zonaResidencia').value;
+            const especialidad = document.getElementById('especialidadPrincipal').value;
+            const experiencia = document.getElementById('experiencia').value;
+            const telefono = document.getElementById('telefonoCandidato').value;
+            const herramientas = document.getElementById('herramientasPropias').value;
+            const resumen = document.getElementById('perfilResumen').value || 'Sin detalles adicionales';
+
+            const telefonoCentral = '573125898271';
+
+            const mensaje = `*NUEVA POSTULACIÓN - TRABAJA CON BYCETEC*%0A%0A` +
+                            `👨‍💻 *Candidato:* ${encodeURIComponent(nombre)}%0A` +
+                            `📍 *Zona:* ${encodeURIComponent(zona)}%0A` +
+                            `⚙️ *Especialidad:* ${encodeURIComponent(especialidad)}%0A` +
+                            `⏳ *Experiencia:* ${encodeURIComponent(experiencia)}%0A` +
+                            `📞 *WhatsApp:* ${encodeURIComponent(telefono)}%0A` +
+                            `🧰 *Herramientas:* ${encodeURIComponent(herramientas)}%0A` +
+                            `📝 *Perfil:* ${encodeURIComponent(resumen)}`;
+
+            window.open(`https://wa.me/${telefonoCentral}?text=${mensaje}`, '_blank');
+        }
+    </script>
+</body>
+</html>
