@@ -19,40 +19,33 @@
     <meta property="og:url" content="https://bycetec.github.io/pagina-web/">
 
     <!-- ========================================== -->
-    <!-- 3. OPTIMIZACIÓN DE VELOCIDAD (PAGE SPEED)  -->
+    <!-- 3. OPTIMIZACIÓN DE VELOCIDAD (PAGESPEED)   -->
     <!-- ========================================== -->
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
 
-    <!-- Tailwind CSS CDN Estático (No bloquea ejecución JS) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99cKBU3JHveKreWEe1UEvhQCHvhLD6W3cgM143axlsJ433j1s5CeNNG+GgVKyxmHB6sERGal+y4ybTtNXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- FontAwesome con Carga Asíncrona (No Bloqueante) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome cargado sin bloquear renderizado -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
-    <!-- Estilos de soporte y optimización de visualización de fuentes -->
+    <!-- Estilos de contraste y cuadrícula técnica -->
     <style>
-        @font-face {
-            font-family: 'Font Awesome 6 Free';
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Font Awesome 6 Brands';
-            font-display: swap;
-        }
         .tech-grid-bg {
             background-image: radial-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px);
             background-size: 24px 24px;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white" style="background-color: #020617; color: #f1f5f9;">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
     <!-- ========================================== -->
     <!-- 4. BARRA DE NAVEGACIÓN (HEADER SUPERIOR)   -->
     <!-- ========================================== -->
-    <nav class="bg-slate-900 border-b border-slate-800 fixed w-full z-50 top-0 left-0" style="background-color: rgba(15, 23, 42, 0.95);">
+    <nav class="bg-slate-900/95 backdrop-blur border-b border-slate-800 fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
             
             <!-- Logo principal con Monograma BT -->
@@ -72,14 +65,14 @@
             </a>
 
             <!-- Botón de Acción Directa -->
-            <a href="#cotizar" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium transition text-sm sm:text-base shadow-lg">
+            <a href="#cotizar" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium transition text-sm sm:text-base shadow-lg shadow-blue-600/20">
                 Solicitar Diagnóstico
             </a>
 
         </div>
     </nav>
 
-    <!-- MAIN CON ESTRUCTURA DEDICADA -->
+    <!-- PUNTOS DE REFERENCIA SEMÁNTICOS MAIN -->
     <main>
 
         <!-- ========================================== -->
@@ -90,7 +83,7 @@
             <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[250px] bg-blue-600/20 rounded-full blur-[100px] pointer-events-none -z-10"></div>
             <div class="absolute inset-0 tech-grid-bg pointer-events-none -z-10 opacity-70"></div>
 
-            <div class="inline-flex items-center gap-2 text-blue-300 text-xs sm:text-sm font-bold tracking-wider uppercase bg-blue-950 px-4 py-1.5 rounded-full border border-blue-700 mb-6 shadow-lg">
+            <div class="inline-flex items-center gap-2 text-blue-300 text-xs sm:text-sm font-bold tracking-wider uppercase bg-blue-950 px-4 py-1.5 rounded-full border border-blue-700 mb-6 shadow-lg backdrop-blur">
                 <span class="relative flex h-2.5 w-2.5">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -100,7 +93,7 @@
 
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white drop-shadow">
                 Ingeniería, Infraestructura Tecnológica & <br class="hidden sm:inline"/>
-                <span class="text-blue-400">Soporte Especializado</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">Soporte Especializado</span>
             </h1>
 
             <p class="text-slate-200 text-base sm:text-lg md:text-xl mb-10 leading-relaxed max-w-3xl mx-auto font-normal">
@@ -108,10 +101,10 @@
             </p>
 
             <div class="flex flex-wrap justify-center gap-4 relative z-10 mb-16">
-                <a href="#servicios" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition shadow-xl hover:scale-105 duration-200">
+                <a href="#servicios" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition shadow-xl shadow-blue-600/30 hover:scale-105 duration-200">
                     Explorar Servicios
                 </a>
-                <a href="#cotizar" class="bg-slate-900 hover:bg-slate-800 text-slate-100 border border-slate-700 px-8 py-4 rounded-xl font-bold transition shadow-lg hover:scale-105 duration-200">
+                <a href="#cotizar" class="bg-slate-900 hover:bg-slate-800 text-slate-100 border border-slate-700 px-8 py-4 rounded-xl font-bold transition backdrop-blur shadow-lg hover:scale-105 duration-200">
                     Agendar Visita Técnica
                 </a>
             </div>
@@ -141,13 +134,13 @@
         <!-- 6. BANNER DE DIAGNÓSTICO EN SITIO          -->
         <!-- ========================================== -->
         <section class="max-w-7xl mx-auto px-4 mb-16">
-            <div class="bg-slate-900 border border-blue-800 p-8 sm:p-10 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-slate-950 border border-blue-800/80 p-8 sm:p-10 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                     <span class="text-emerald-300 text-xs font-bold uppercase tracking-wider bg-emerald-950 px-3 py-1 rounded-full border border-emerald-700 mb-3 inline-block">Atención Inmediata</span>
                     <h2 class="text-2xl sm:text-3xl font-bold mb-2 text-white">Visita Técnica de Diagnóstico & Asistencia 24/7</h2>
                     <p class="text-slate-300 max-w-2xl text-sm sm:text-base">Evaluamos el estado real de tu red, servidores o CCTV. Contamos con atención de emergencias críticas 24/7 para garantizar la continuidad de tu negocio.</p>
                 </div>
-                <a href="#cotizar" class="whitespace-nowrap bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3.5 rounded-xl font-bold transition shadow-lg">
+                <a href="#cotizar" class="whitespace-nowrap bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3.5 rounded-xl font-bold transition shadow-lg shadow-emerald-900/40">
                     Agendar Diagnóstico
                 </a>
             </div>
@@ -156,7 +149,7 @@
         <!-- ========================================== -->
         <!-- 7. PORTAFOLIO DE SERVICIOS EN REJILLA      -->
         <!-- ========================================== -->
-        <section id="servicios" class="py-16 bg-slate-900 border-y border-slate-800">
+        <section id="servicios" class="py-16 bg-slate-900/50 border-y border-slate-800">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-bold mb-4 text-white">Portafolio de Servicios</h2>
@@ -166,98 +159,98 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Servicio 1 -->
-                    <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                         <div class="w-12 h-12 bg-blue-950 border border-blue-700 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
-                            <i class="fas fa-headset" aria-hidden="true"></i>
+                            <i class="fas fa-headset"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Soporte Técnico 24/7 & Mantenimiento</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-4">
                             Mantenimiento preventivo y correctivo para computadores. Atención presencial a domicilio, soporte a empresas y atención de emergencias 24/7.
                         </p>
                         <ul class="text-slate-300 text-xs space-y-2">
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Disponibilidad 24/7 para fallas críticas</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Optimización de hardware y software</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Reparación de celulares y equipos</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Disponibilidad 24/7 para fallas críticas</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Optimización de hardware y software</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Reparación de celulares y equipos</li>
                         </ul>
                     </div>
 
                     <!-- Servicio 2 -->
-                    <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                         <div class="w-12 h-12 bg-blue-950 border border-blue-700 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
-                            <i class="fas fa-video" aria-hidden="true"></i>
+                            <i class="fas fa-video"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Seguridad Electrónica & CCTV</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-4">
                             Suministro, instalación y mantenimiento de cámaras de seguridad IP/HD, grabadores DVR/NVR y sistemas de control de acceso.
                         </p>
                         <ul class="text-slate-300 text-xs space-y-2">
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Cámaras inteligentes y analítica</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Mantenimiento de sistemas existentes</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Configuración de monitoreo remoto</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Cámaras inteligentes y analítica</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Mantenimiento de sistemas existentes</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Configuración de monitoreo remoto</li>
                         </ul>
                     </div>
 
                     <!-- Servicio 3 -->
-                    <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                         <div class="w-12 h-12 bg-blue-950 border border-blue-700 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
-                            <i class="fas fa-network-wired" aria-hidden="true"></i>
+                            <i class="fas fa-network-wired"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Redes Wi-Fi & Cableado</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-4">
                             Validación, certificación y reestructuración de cableado estructurado. Optimización de cobertura Wi-Fi y configuración de routers.
                         </p>
                         <ul class="text-slate-300 text-xs space-y-2">
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Eliminación de zonas muertas Wi-Fi</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Organización de gabinetes y racks</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Segmentación y calidad de red</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Eliminación de zonas muertas Wi-Fi</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Organización de gabinetes y racks</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Segmentación y calidad de red</li>
                         </ul>
                     </div>
 
                     <!-- Servicio 4 -->
-                    <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                         <div class="w-12 h-12 bg-blue-950 border border-blue-700 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
-                            <i class="fas fa-boxes-stacked" aria-hidden="true"></i>
+                            <i class="fas fa-boxes-stacked"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Equipos & Repuestos</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-4">
                             Venta de computadores nuevos y reacondicionados con garantía. Venta de smartphones y repuestos originales para cómputo y cámaras.
                         </p>
                         <ul class="text-slate-300 text-xs space-y-2">
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Discos SSD, Memorias RAM, Fuentes</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Repuestos de cámaras y conectores</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Asesoría técnica en compras</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Discos SSD, Memorias RAM, Fuentes</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Repuestos de cámaras y conectores</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Asesoría técnica en compras</li>
                         </ul>
                     </div>
 
                     <!-- Servicio 5 -->
-                    <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                         <div class="w-12 h-12 bg-blue-950 border border-blue-700 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
-                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Ciberseguridad & Datos</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-4">
                             Recuperación profesional de información formateada o borrada. Protección perimetral, firewall y políticas de respaldo de datos.
                         </p>
                         <ul class="text-slate-300 text-xs space-y-2">
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Recuperación de discos y memorias</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Protección contra malware / virus</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Planes de copias de seguridad</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Recuperación de discos y memorias</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Protección contra malware / virus</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Planes de copias de seguridad</li>
                         </ul>
                     </div>
 
                     <!-- Servicio 6 -->
-                    <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
                         <div class="w-12 h-12 bg-blue-950 border border-blue-700 rounded-2xl flex items-center justify-center text-blue-400 text-xl mb-6">
-                            <i class="fas fa-code" aria-hidden="true"></i>
+                            <i class="fas fa-code"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Desarrollo Web & Bots</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-4">
                             Diseño y creación de páginas web corporativas modernas. Implementación de automatización de chats empresariales para ventas.
                         </p>
                         <ul class="text-slate-300 text-xs space-y-2">
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Páginas web rápidas y adaptables</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Automatización de WhatsApp Business</li>
-                            <li><i class="fas fa-check text-blue-400 mr-2" aria-hidden="true"></i>Presencia digital profesional</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Páginas web rápidas y adaptables</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Automatización de WhatsApp Business</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>Presencia digital profesional</li>
                         </ul>
                     </div>
 
@@ -271,6 +264,8 @@
         <section id="cotizar" class="py-16 max-w-4xl mx-auto px-4">
             <div class="bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
                 
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
                 <div class="text-center mb-8">
                     <span class="text-blue-300 text-xs font-bold uppercase tracking-widest bg-blue-950 px-3.5 py-1.5 rounded-full border border-blue-700 mb-3 inline-block">Cotización Inmediata</span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Solicita tu Presupuesto o Diagnóstico</h2>
@@ -282,6 +277,7 @@
                     </p>
                 </div>
 
+                <!-- Formulario con LABELS y FOR vinculados -->
                 <form id="quoteForm" onsubmit="enviarCotizacion(event)" class="space-y-5">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         
@@ -345,7 +341,7 @@
                         <textarea id="detalles" rows="3" placeholder="Describe brevemente la falla o lo que deseas instalar/cotizar..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition shadow-lg flex items-center justify-center gap-3 hover:scale-[1.01] duration-200">
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-3 hover:scale-[1.01] duration-200">
                         <i class="fas fa-paper-plane text-lg" aria-hidden="true"></i> Enviar Solicitud de Cotización
                     </button>
                 </form>
@@ -360,7 +356,7 @@
             <p class="text-slate-300 mb-8 max-w-xl mx-auto">Escríbenos inmediatamente para atender cualquier emergencia técnica 24/7 o responder dudas puntuales.</p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://wa.me/573125898271?text=Hola%20ByceTec,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition shadow-xl">
+                <a href="https://wa.me/573125898271?text=Hola%20ByceTec,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition shadow-xl shadow-emerald-950/50">
                     <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i> Contactar por WhatsApp
                 </a>
             </div>
@@ -378,7 +374,7 @@
     <!-- ========================================== -->
     <!-- 11. BOTÓN FLOTANTE PERMANENTE DE WHATSAPP  -->
     <!-- ========================================== -->
-    <a href="https://wa.me/573125898271?text=Hola%20ByceTec,%20necesito%20asistencia%20t%C3%A9cnica%20de%20emergencia" target="_blank" rel="noopener" class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl z-50 flex items-center justify-center transition-all duration-300 hover:scale-110 group" aria-label="Contacto por WhatsApp para Soporte 24/7">
+    <a href="https://wa.me/573125898271?text=Hola%20ByceTec,%20necesito%20asistencia%20t%C3%A9cnica%20de%20emergencia" target="_blank" rel="noopener" class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl z-50 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-emerald-950/80 group" aria-label="Contacto por WhatsApp para Soporte 24/7">
         <i class="fab fa-whatsapp text-3xl" aria-hidden="true"></i>
         <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-slate-700 shadow-xl pointer-events-none">
             Soporte 24/7 - ¿Necesitas ayuda?
